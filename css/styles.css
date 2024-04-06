@@ -1,0 +1,41 @@
+h1 {
+    font-size: 100px;
+    font-family: "宋体";
+}
+
+/* 背景图片 */
+body {
+    background-image: url(../imag/mhy.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+a {
+    text-decoration: none
+}
+
+/* 把链接变为块级元素 */
+.area {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #55585a;
+    font-size: 14px;
+    color: aliceblue;
+    text-decoration: none;
+    padding-left: 30px;
+    line-height: 40px;
+}
+
+/* 鼠标经过链接变换颜色 */
+a:hover {
+    background-color: orange;
+}
+
+p {
+    color: skyblue;
+    font-weight: 1000;
+}
