@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>食分速递项目 | 学习笔记</title><meta name="author" content="明"><meta name="copyright" content="明"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一 环境搭建 1.前端环境搭建前端工程基于 nginx 运行 启动nginx在nginx安装的文件夹内，双击 nginx.exe 即可启动 nginx 服务，访问端口号为 80 什么是nginx？nginx 反向代理，就是将前端发送的动态请求由 nginx 转发到后端服务器  位置：运行在你的服务器上。 职责：接收、调度、分发请求。它是请求到达服务器后遇到的第一个“门卫”和“调度员”。它不处理核心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="食分速递项目">
+<meta property="og:url" content="http://example.com/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="一 环境搭建 1.前端环境搭建前端工程基于 nginx 运行 启动nginx在nginx安装的文件夹内，双击 nginx.exe 即可启动 nginx 服务，访问端口号为 80 什么是nginx？nginx 反向代理，就是将前端发送的动态请求由 nginx 转发到后端服务器  位置：运行在你的服务器上。 职责：接收、调度、分发请求。它是请求到达服务器后遇到的第一个“门卫”和“调度员”。它不处理核心">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2025-01-03T01:12:58.000Z">
+<meta property="article:modified_time" content="2025-10-03T02:35:01.758Z">
+<meta property="article:author" content="明">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "食分速递项目",
+  "url": "http://example.com/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2025-01-03T01:12:58.000Z",
+  "dateModified": "2025-10-03T02:35:01.758Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "明",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '食分速递项目',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">学习笔记</span></a><a class="nav-page-title" href="/"><span class="site-name">食分速递项目</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">食分速递项目</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-03T01:12:58.000Z" title="发表于 2025-01-03 09:12:58">2025-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-03T02:35:01.758Z" title="更新于 2025-10-03 10:35:01">2025-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="一-环境搭建"><a href="#一-环境搭建" class="headerlink" title="一 环境搭建"></a>一 环境搭建</h2><p><img src="4.png"></p>
+<h3 id="1-前端环境搭建"><a href="#1-前端环境搭建" class="headerlink" title="1.前端环境搭建"></a>1.前端环境搭建</h3><p><strong>前端工程基于 nginx 运行</strong></p>
+<h4 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h4><p>在nginx安装的文件夹内，双击 nginx.exe 即可启动 nginx 服务，访问端口号为 80</p>
+<h4 id="什么是nginx？"><a href="#什么是nginx？" class="headerlink" title="什么是nginx？"></a>什么是nginx？</h4><p>nginx 反向代理，就是将前端发送的<strong>动态请求</strong>由 nginx 转发到<strong>后端服务器</strong></p>
+<ul>
+<li><strong>位置</strong>：运行在你的<strong>服务器</strong>上。</li>
+<li><strong>职责</strong>：<strong>接收、调度、分发</strong>请求。它是请求到达服务器后遇到的第一个“门卫”和“调度员”。它不处理核心业务逻辑（比如计算订单金额），但它决定把这个请求交给谁去处理，或者直接自己处理（比如直接返回一个图片文件）。</li>
+</ul>
+<h4 id="nginx-反向代理的好处"><a href="#nginx-反向代理的好处" class="headerlink" title="nginx 反向代理的好处"></a>nginx 反向代理的好处</h4><p>•提高访问速度</p>
+<p>•进行负载均衡</p>
+<p>•保证后端服务安全</p>
+<p>所谓<strong>负载均衡</strong>,就是把大量的请求按照我们指定的方式均衡的分配给集群中的每台服务器</p>
+<img src="5.png" style="zoom: 50%;">
+
+<h4 id="nginx-反向代理的配置方式"><a href="#nginx-反向代理的配置方式" class="headerlink" title="nginx 反向代理的配置方式"></a>nginx 反向代理的配置方式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">	listen <span class="number">80</span>;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	</span><br><span class="line">	location /api/ &#123;</span><br><span class="line">            		proxy_pass   http:<span class="comment">//localhost:8080/admin/;  #反向代理</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>**listen 80;**监听80端口</p>
+<p><strong>逐行详解</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>定义一个虚拟服务器</strong>：Nginx 可以同时托管多个网站（虚拟主机），每个 <code>server {}</code> 块就是一个网站的配置。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">listen 80;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>监听端口</strong>：这个虚拟服务器会监听来自 <strong>80 端口</strong> 的 HTTP 请求（80 是 HTTP 协议的默认端口）。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server_name localhost;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>服务器名称</strong>：这个虚拟服务器对应的域名是 <code>localhost</code>。当你在浏览器里访问 <code>http://localhost</code> 时，就会由这个 server 块来处理。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location /api/ &#123;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>位置块</strong>：这是最核心的配置。它定义了一个 <strong>URL 路径匹配规则</strong>。所有以 <code>/api/</code> 开头的请求（例如 <code>http://localhost/api/employee/login</code>），都会进入这个 <code>location</code> 块内的逻辑。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">proxy_pass http://localhost:8080/admin/;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>反向代理指令</strong>：这是实现转发的关键命令。<ul>
+<li>它告诉 Nginx，对于匹配到的请求，不要自己处理，而是将其 <strong>转发（代理）</strong> 到指定的地址。</li>
+<li><code>http://localhost:8080/admin/</code> 是 <strong>目标地址</strong>。</li>
+</ul>
+</li>
+</ul>
+<img src="6.png" style="zoom:80%;">
+
+<h4 id="nginx-负载均衡的配置方式"><a href="#nginx-负载均衡的配置方式" class="headerlink" title="nginx 负载均衡的配置方式"></a>nginx 负载均衡的配置方式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">upstream webservers&#123;</span><br><span class="line">	server <span class="number">192.168</span><span class="number">.100</span><span class="number">.128</span>:<span class="number">8080</span>;</span><br><span class="line">	server <span class="number">192.168</span><span class="number">.100</span><span class="number">.129</span>:<span class="number">8080</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">	listen <span class="number">80</span>;</span><br><span class="line">	server_name localhost;</span><br><span class="line">	</span><br><span class="line">	location /api/ &#123;</span><br><span class="line">            		proxy_pass   http:<span class="comment">//webservers/admin/;  #负载均衡</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>1. <code>upstream</code> 块 - 定义服务器池（后端集群）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">upstream webservers &#123;</span><br><span class="line">    server 192.168.100.128:8080;</span><br><span class="line">    server 192.168.100.129:8080;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>upstream webservers {}</code></strong>：定义一个名为 <code>webservers</code> 的上游服务器组（也叫集群或服务器池）。</li>
+<li><strong><code>server 192.168.100.128:8080;</code></strong>：在池中添加第一台后端服务器，IP 是 <code>192.168.100.128</code>，端口是 <code>8080</code>。</li>
+<li><strong><code>server 192.168.100.129:8080;</code></strong>：在池中添加第二台后端服务器，IP 是 <code>192.168.100.129</code>，端口是 <code>8080</code>。</li>
+</ul>
+<p><strong>Nginx 默认的负载均衡策略是轮询</strong>，也就是说，第一个请求发给 128，第二个请求发给 129，第三个又发给 128，以此类推。</p>
+<p><strong>2. <code>location</code> 块 - 流量分发</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location /api/ &#123;</span><br><span class="line">    proxy_pass http://webservers/admin/;  #负载均衡</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关键变化在这里：<code>proxy_pass</code> 的目标不再是单一的服务器地址，而是指向了我们定义的 upstream 池 <code>http://webservers</code>。</li>
+<li>这意味着，所有匹配到的请求都会被分发到 <code>webservers</code> 池中的服务器上。</li>
+</ul>
+<p><img src="7.png"></p>
+<h3 id="2-后端环境搭建"><a href="#2-后端环境搭建" class="headerlink" title="2.后端环境搭建"></a>2.后端环境搭建</h3><h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p>后端工程基于 maven 进行项目构建，并且进行分模块开发</p>
+<p><img src="8.png"></p>
+<p><img src="9.png"></p>
+<p><strong>sky-common</strong> 子模块中存放的是一些公共类，可以供其他模块使用</p>
+<p><strong>sky-pojo</strong> 子模块中存放的是一些 entity、DTO、VO</p>
+<img src="10.png" style="zoom: 67%;">
+
+<p><strong>sky-server</strong> 子模块中存放的是 配置文件、配置类、拦截器、controller、service、mapper、启动类等</p>
+<h4 id="使用Git进行版本控制"><a href="#使用Git进行版本控制" class="headerlink" title="使用Git进行版本控制"></a>使用Git进行版本控制</h4><p>.gitingore文件是git的相关文件，目的是忽略推送到服务器的文件或文件夹</p>
+<p><img src="11.png"></p>
+<p>还没有被git版本控制的项目可以在idea配置，具体操作是上方操作菜单点击VSC，点击创建git仓库，最后在弹出窗中选择项目</p>
+<img src="12.png" style="zoom:50%;">
+
+<p>之后就可以测试提交，注意第一次提交会提交到本地仓库</p>
+<p>推送就是要推送到远程仓库，第一次会提示你配置远程仓库信息</p>
+<p><strong>核心概念总结</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">动作</th>
+<th align="left">作用域</th>
+<th align="left">描述</th>
+<th align="left">影响</th>
+<th align="left">类比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>commit</code></strong></td>
+<td align="left"><strong>本地</strong></td>
+<td align="left">将<strong>暂存区</strong>的快照永久记录到<strong>本地仓库</strong>的历史中。</td>
+<td align="left">只更新你自己电脑上的 Git 仓库。团队其他成员看不到你的这次提交。</td>
+<td align="left"><strong>保存到本地硬盘</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>push</code></strong></td>
+<td align="left"><strong>本地 → 远程</strong></td>
+<td align="left">将<strong>本地仓库</strong>中的新提交记录上传到<strong>远程仓库</strong>（如 GitHub, Gitee）。</td>
+<td align="left">更新共享的远程仓库，团队其他成员可以通过 <code>pull</code> 获取你的更新。</td>
+<td align="left"><strong>上传到网盘&#x2F;服务器</strong></td>
+</tr>
+</tbody></table>
+<p><strong>工作流程图示</strong></p>
+<p>一个标准的 Git 协作流程如下：</p>
+<p><strong>你的电脑</strong><br><code>工作区</code> –(<code>git add</code>)–&gt; <code>暂存区</code> –(<code>git commit</code>)–&gt; <code>本地仓库</code> –(<code>git push</code>)–&gt; <strong>远程仓库</strong></p>
+<p><strong>同事的电脑拉远程仓库代码</strong><br><strong>远程仓库</strong> –(<code>git fetch</code>)–&gt; <strong>本地仓库</strong> –(<code>git checkout</code>)–&gt; <strong>工作区</strong></p>
+<ul>
+<li><strong>合并（Merge）</strong>：<strong>“邀请别人的成果加入我的版本”</strong><ul>
+<li>操作：我站在原地不动，把别人完成的新内容<strong>拉过来</strong>，和我当前的内容<strong>融合</strong>在一起。如果内容有重叠（冲突），我需要手动调解。</li>
+<li>结果：历史记录会留下一次“合并”的痕迹，标明两条线在这里汇合了。</li>
+</ul>
+</li>
+<li><strong>变基（Rebase）</strong>：<strong>“把我的工作挪到最新的成果之上”</strong><ul>
+<li>操作：我先把我的工作暂时<strong>放到一边</strong>，然后<strong>把别人的新成果作为新的基础</strong>，最后我再把我的工作<strong>重新实施</strong>在这个崭新的、最新的基础之上。</li>
+<li>结果：历史记录看起来就像是我从一开始就是在最新的代码基础上进行工作的，一条直线，非常整洁。</li>
+</ul>
+</li>
+</ul>
+<p><strong>比喻</strong></p>
+<p><strong>合并</strong>：你正在拼A部分，同事拼好了B部分。你直接把同事拼好的B部分拿过来，和你的A部分对接在一起。如果对接不上（冲突），你就需要调整一下接口。</p>
+<p><strong>变基</strong>：你发现同事不仅拼好了B部分，还把你们共同的底座C也升级了。于是，你先把你的A部分拆下来，把升级后的新底座C换上去，然后再把你的A部分重新拼到新底座C上。</p>
+<h3 id="3-swagger接口文档"><a href="#3-swagger接口文档" class="headerlink" title="3.swagger接口文档"></a>3.swagger接口文档</h3><h4 id="Knife4j使用方式"><a href="#Knife4j使用方式" class="headerlink" title="Knife4j使用方式"></a>Knife4j使用方式</h4><p><a target="_blank" rel="noopener" href="https://doc.xiaominfo.com/">K</a><a target="_blank" rel="noopener" href="https://doc.xiaominfo.com/">nife4j</a><a target="_blank" rel="noopener" href="https://doc.xiaominfo.com/"> </a>是为Java MVC框架集成Swagger生成Api文档的增强解决方案</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.xiaoymin<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>knife4j-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>WebMvcConfiguration</strong>文件配置</p>
+<p>1.在配置类中加入 knife4j 相关配置</p>
+<p>2.设置静态资源映射，否则接口文档页面无法访问</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置类，注册web层相关组件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebMvcConfiguration</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JwtTokenAdminInterceptor jwtTokenAdminInterceptor;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 注册自定义拦截器</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;开始注册自定义拦截器...&quot;</span>);</span><br><span class="line">        registry.addInterceptor(jwtTokenAdminInterceptor)</span><br><span class="line">                .addPathPatterns(<span class="string">&quot;/admin/**&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/admin/employee/login&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过knife4j生成接口文档</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">docket</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ApiInfo</span> <span class="variable">apiInfo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                .title(<span class="string">&quot;苍穹外卖项目接口文档&quot;</span>)</span><br><span class="line">                .version(<span class="string">&quot;2.0&quot;</span>)</span><br><span class="line">                .description(<span class="string">&quot;苍穹外卖项目接口文档&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">        <span class="type">Docket</span> <span class="variable">docket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo)</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.sky.controller&quot;</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">        <span class="keyword">return</span> docket;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置静态资源映射</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> &#123;</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/doc.html&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">        registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h4><table>
+<thead>
+<tr>
+<th><strong>注解</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Api</td>
+<td>用在类上，例如Controller，表示对类的说明</td>
+</tr>
+<tr>
+<td>@ApiModel</td>
+<td>用在类上，例如entity、DTO、VO</td>
+</tr>
+<tr>
+<td>@ApiModelProperty</td>
+<td>用在属性上，描述属性信息</td>
+</tr>
+<tr>
+<td>@ApiOperation</td>
+<td>用在方法上，例如Controller的方法，说明方法的用途、作用</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/">http://example.com/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">学习笔记</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/10/03/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/" title="软件开发整体介绍"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">软件开发整体介绍</div></div><div class="info-2"><div class="info-item-1">1.软件开发流程  2.角色分工  3.软件环境 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">明</div><div class="author-info-description">记录学习过程中的点点滴滴</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">一 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1.前端环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8nginx"><span class="toc-text">启动nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFnginx%EF%BC%9F"><span class="toc-text">什么是nginx？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-text">nginx 反向代理的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">nginx 反向代理的配置方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">nginx 负载均衡的配置方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%8E%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">2.后端环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Git%E8%BF%9B%E8%A1%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-text">使用Git进行版本控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-swagger%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3"><span class="toc-text">3.swagger接口文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Knife4j%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">Knife4j使用方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-text">常用注解</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/03/%E9%A3%9F%E5%88%86%E9%80%9F%E9%80%92%E9%A1%B9%E7%9B%AE/" title="食分速递项目">食分速递项目</a><time datetime="2025-01-03T01:12:58.000Z" title="发表于 2025-01-03 09:12:58">2025-01-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/03/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/" title="软件开发整体介绍">软件开发整体介绍</a><time datetime="2024-10-03T01:42:56.000Z" title="发表于 2024-10-03 09:42:56">2024-10-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/30/%E5%88%A9%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="利用Hexo搭建个人博客">利用Hexo搭建个人博客</a><time datetime="2024-09-30T12:00:00.000Z" title="发表于 2024-09-30 20:00:00">2024-09-30</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By 明</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.0.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.1"></script></div></div></body></html>
